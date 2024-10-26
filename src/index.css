@@ -20,10 +20,10 @@
 :root:has(.no-doc-scroll) {
   overflow: hidden;
 }
-
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     color: #000;
     background-color: #0f0;
   }
-}
+} */
