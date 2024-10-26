@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { getFlyers, getSettings } from "./sanity/sanity-utils";
 import Player from "./components/Player";
+import Info from "./components/Info";
 function App() {
   const [flyers, setFlyers] = useState([]);
   const [settings, setSettings] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
 
   const imageSize = {
     small: "?h=250&fm=webp",
@@ -48,6 +51,14 @@ function App() {
           {settings.titulo}
         </span>
       </motion.div>
+
+      <div
+        onClick={() => setIsInfoOpen(!isInfoOpen)}
+        className={`fixed right-0 top-0 z-50 m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000] ${isInfoOpen ? "sm:mr-8" : ""}`}
+      >
+        <div>{isInfoOpen ? "x" : "?"}</div>
+      </div>
+      {isInfoOpen && <Info text={settings.texto && settings.texto} />}
 
       <div className="grid grid-cols-6">
         {flyers &&
