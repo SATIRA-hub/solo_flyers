@@ -14,9 +14,9 @@ export default function Player({ embed }) {
     >
       <div
         onClick={() => setPlayerOpen(!playerOpen)}
-        className="pointer-events-auto m-4 size-[55px] cursor-pointer rounded-full border border-black bg-[#0f0] px-4 py-2 text-center text-3xl text-[#000] hover:bg-[#0f0] hover:text-black"
+        className="pointer-events-auto m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000]"
       >
-        {playerOpen ? "x" : "♪"}
+        <div>{playerOpen ? "x" : "♪"}</div>
       </div>
       <div className="pointer-events-auto h-[400px] w-full opacity-95">
         <iframe
