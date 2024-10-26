@@ -45,9 +45,9 @@ function App() {
     <>
       <motion.div
         drag
-        className="top:0 fixed cursor-move select-none border border-black bg-[#00ff00] px-1 text-center text-xl font-black uppercase text-black sm:left-[calc(50%-285px)] sm:top-[calc(50%-25px)] sm:w-[570px] sm:pb-1 sm:text-7xl"
+        className="fixed top-0 w-max cursor-move select-none border border-black bg-[#00ff00] px-1 text-center text-xl font-black uppercase text-black mix-blend-difference sm:left-[calc(50%)] sm:top-[calc(45%)] sm:text-5xl md:sm:pb-1 lg:text-7xl"
       >
-        <span className="transition-all hover:blur-[1px] sm:blur-[3px]">
+        <span className="text-[#000] transition-all hover:blur-[1px] sm:blur-[3px]">
           {settings.titulo}
         </span>
       </motion.div>
