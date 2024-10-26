@@ -13,3 +13,7 @@ export async function getFlyers() {
     }
   }`);
 }
+
+export async function getSettings() {
+  return client.fetch(`*[_type == "settings"][0]`);
+}
