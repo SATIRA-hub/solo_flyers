@@ -25,31 +25,31 @@ function App() {
   }, []);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>error: {error.message}</div>;
   }
 
   if (loading) {
     return (
       <div className="flex h-screen w-full items-center justify-center">
-        . . .
+        <span className="animate-pulse text-xs font-black uppercase">
+          fetcheando data...
+        </span>
       </div>
     );
   }
-
-  console.log(flyers);
 
   return (
     <>
       <motion.div
         drag
-        className="fixed left-[calc(50%-180px)] top-[calc(50%-25px)] h-[50px] w-[360px] cursor-crosshair select-none border border-black bg-[#00ff00] p-4 text-center text-xs uppercase text-black"
+        className="top:0 fixed cursor-move select-none border border-black bg-[#00ff00] px-1 text-center text-xl font-black uppercase text-black sm:left-[calc(50%-285px)] sm:top-[calc(50%-25px)] sm:w-[570px] sm:pb-1 sm:text-7xl"
       >
         <span className="transition-all hover:blur-[1px] sm:blur-[3px]">
           {settings.titulo}
         </span>
       </motion.div>
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-6">
         {flyers &&
           flyers.map((mes) =>
             mes.flyers
@@ -57,7 +57,10 @@ function App() {
               .reverse()
               .filter((flyer) => flyer.asset && flyer.asset.url !== undefined)
               .map((flyer) => (
-                <img key={flyer._key} src={flyer.asset.url + imageSize.small} />
+                <img
+                  key={flyer._key}
+                  src={flyer.asset.url + imageSize.medium}
+                />
               )),
           )}
       </div>
