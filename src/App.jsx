@@ -56,7 +56,7 @@ function App() {
 
       <div
         onClick={() => setIsInfoOpen(!isInfoOpen)}
-        className={`fixed bottom-0 left-0 z-50 m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black p-2 text-xl transition-all duration-500 ease-in-out sm:bottom-[48%] ${isInfoOpen ? "text-[#0f0]" : "bg-[#0f0] text-[#000]"}`}
+        className={`fixed bottom-0 left-0 z-50 m-4 flex size-12 cursor-pointer select-none items-center justify-center rounded-full border border-black p-2 text-xl transition-all duration-500 ease-in-out sm:bottom-[48%] ${isInfoOpen ? "text-[#0f0]" : "bg-[#0f0] text-[#000]"}`}
       >
         <div>
           {isInfoOpen ? (

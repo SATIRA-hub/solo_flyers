@@ -14,7 +14,7 @@ export default function Player({ embed }) {
     >
       <div
         onClick={() => setPlayerOpen(!playerOpen)}
-        className="pointer-events-auto m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000]"
+        className="pointer-events-auto m-4 flex size-12 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000]"
       >
         <div>
           {playerOpen ? (
