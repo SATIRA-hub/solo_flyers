@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { getFlyers, getSettings } from "./sanity/sanity-utils";
 import Player from "./components/Player";
 import Info from "./components/Info";
@@ -54,11 +54,13 @@ function App() {
 
       <div
         onClick={() => setIsInfoOpen(!isInfoOpen)}
-        className={`fixed right-0 top-0 z-50 m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000] ${isInfoOpen ? "sm:mr-8" : ""}`}
+        className={`fixed bottom-4 left-0 z-50 m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black p-2 text-xl transition-all duration-500 ease-in-out sm:bottom-[55%] ${isInfoOpen ? "text-[#0f0]" : "bg-[#0f0] text-[#000]"}`}
       >
-        <div>{isInfoOpen ? "x" : "?"}</div>
+        <div>{isInfoOpen ? "X" : "?"}</div>
       </div>
-      {isInfoOpen && <Info text={settings.texto && settings.texto} />}
+      <AnimatePresence>
+        {isInfoOpen && <Info text={settings.texto && settings.texto} />}
+      </AnimatePresence>
 
       <div className="grid grid-cols-6">
         {flyers &&
