@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { getFlyers, getSettings } from "./sanity/sanity-utils";
 import Player from "./components/Player";
 import Info from "./components/Info";
+import Lightbox from "./components/Lightbox";
 function App() {
   const [flyers, setFlyers] = useState([]);
   const [settings, setSettings] = useState({});
@@ -10,6 +11,7 @@ function App() {
   const [error, setError] = useState(null);
 
   const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const [selectedFlyer, setSelectedFlyer] = useState(null);
 
   const imageSize = {
     small: "?h=250&fm=webp",
@@ -70,15 +72,22 @@ function App() {
               .reverse()
               .filter((flyer) => flyer.asset && flyer.asset.url !== undefined)
               .map((flyer) => (
-                <img
+                <div
                   key={flyer._key}
-                  src={flyer.asset.url + imageSize.medium}
-                />
+                  className="flex aspect-square w-full cursor-zoom-in items-center justify-center overflow-hidden"
+                  onClick={() => setSelectedFlyer(flyer)}
+                >
+                  <img src={flyer.asset.url + imageSize.medium} />
+                </div>
               )),
           )}
       </div>
 
       {settings.embed && <Player embed={settings.embed} />}
+
+      {selectedFlyer && (
+        <Lightbox flyer={selectedFlyer} setSelectedFlyer={setSelectedFlyer} />
+      )}
     </>
   );
 }
