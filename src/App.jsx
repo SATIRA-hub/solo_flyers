@@ -74,7 +74,7 @@ function App() {
               .map((flyer) => (
                 <div
                   key={flyer._key}
-                  className="flex aspect-square w-full cursor-zoom-in items-center justify-center overflow-hidden"
+                  className="flex aspect-square w-full cursor-zoom-in items-center justify-center overflow-hidden transition-all duration-500 ease-in-out sm:hover:invert"
                   onClick={() => setSelectedFlyer(flyer)}
                 >
                   <img src={flyer.asset.url + imageSize.medium} />
