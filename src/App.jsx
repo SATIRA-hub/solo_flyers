@@ -64,7 +64,7 @@ function App() {
         {isInfoOpen && <Info text={settings.texto && settings.texto} />}
       </AnimatePresence>
 
-      <div className="grid grid-cols-6">
+      <div className="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-12">
         {flyers &&
           flyers.map((mes) =>
             mes.flyers
