@@ -15,18 +15,27 @@ export default function Info({ text }) {
         exit={{ opacity: 0 }}
         className="flex flex-col items-center justify-center gap-4 px-10"
       >
-        <div className="max-w-[50%] text-center font-serif text-xl">
+        <div className="max-w-[80%] text-center font-[Barlow] text-4xl">
           <PortableText value={text} />
         </div>
-        <div className="text-xs font-black uppercase">
-          web:{" "}
-          <a href="https://sofja.uno" target="_blank" className="underline">
+        <div className="absolute bottom-8 text-sm font-black uppercase">
+          <span className="font-[Credible]">web x (</span>
+          <a
+            href="https://sofja.uno"
+            target="_blank"
+            className="font-[Sniglet] hover:invert"
+          >
             sofja
-          </a>{" "}
-          +{" "}
-          <a href="https://astrosuka.xyz" target="_blank" className="underline">
+          </a>
+          <span className="font-[Credible]"> + </span>
+          <a
+            href="https://astrosuka.xyz"
+            target="_blank"
+            className="font-[Sniglet] hover:invert"
+          >
             astrosuka
           </a>
+          <span className="font-[Credible]">)</span>
         </div>
       </motion.div>
     </motion.div>

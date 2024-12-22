@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Barlow";
+  src: url("fonts/Barlow-elasticc.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Credible";
+  src: url("fonts/Credible-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Sniglet";
+  src: url("fonts/Sniglet-webfont.woff") format("woff");
+}
+
 :root {
   font-family: sans-serif;
   line-height: 1.5;
