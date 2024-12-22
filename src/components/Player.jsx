@@ -10,13 +10,13 @@ export default function Player({ embed }) {
 
   return (
     <div
-      className={`fixed bottom-0 flex w-full flex-col items-end justify-center transition-all duration-500 ease-in-out ${playerOpen ? "translate-y-[0]" : "translate-y-[400px]"} pointer-events-none`}
+      className={`fixed bottom-0 z-50 flex w-full flex-col items-end justify-center transition-all duration-500 ease-in-out ${playerOpen ? "translate-y-[0]" : "translate-y-[400px]"} pointer-events-none`}
     >
       <div
         onClick={() => setPlayerOpen(!playerOpen)}
         className="pointer-events-auto m-4 flex size-8 cursor-pointer select-none items-center justify-center rounded-full border border-black bg-[#0f0] p-2 text-xl text-[#000]"
       >
-        <div>{playerOpen ? "x" : "♪"}</div>
+        <div>{playerOpen ? "↓" : "♪"}</div>
       </div>
       <div className="pointer-events-auto h-[400px] w-full opacity-95">
         <iframe
