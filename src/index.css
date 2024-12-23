@@ -24,7 +24,7 @@
 
   color-scheme: light dark;
   color: #0f0;
-  background-color: #000;
+  background-color: #0f0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,6 +35,12 @@
 :root:has(.no-doc-scroll) {
   overflow: hidden;
 }
+
+::selection {
+  background-color: #f0f;
+  color: #0f0;
+}
+
 /* 
 @media (prefers-color-scheme: light) {
   :root {
