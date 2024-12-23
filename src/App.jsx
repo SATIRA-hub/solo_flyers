@@ -4,6 +4,8 @@ import { getFlyers, getSettings } from "./sanity/sanity-utils";
 import Player from "./components/Player";
 import Info from "./components/Info";
 import Lightbox from "./components/Lightbox";
+import SiteTitle from "./components/SiteTitle";
+
 function App() {
   const [flyers, setFlyers] = useState([]);
   const [settings, setSettings] = useState({});
@@ -45,16 +47,7 @@ function App() {
 
   return (
     <>
-      <motion.div
-        drag
-        className="fixed top-[calc(20%)] w-max cursor-move select-none border border-black bg-[#00ff00] px-1 text-center text-6xl font-black uppercase text-black mix-blend-difference sm:left-[calc(50%)] sm:top-[calc(45%)] sm:text-5xl md:sm:pb-1 lg:text-7xl"
-      >
-        <span className="text-[#000] blur-[2px] transition-all hover:blur-none">
-          <span className="inline-block font-[Sniglet]">solo</span>
-          <span className="inline-block font-[Credible]">flyers</span>
-        </span>
-      </motion.div>
-
+      <SiteTitle />
       <div
         onClick={() => setIsInfoOpen(!isInfoOpen)}
         className={`fixed bottom-0 left-0 z-50 m-4 flex size-12 cursor-pointer select-none items-center justify-center rounded-full border border-black p-2 text-xl transition-all duration-500 ease-in-out sm:bottom-[48%] ${isInfoOpen ? "text-[#0f0]" : "bg-[#0f0] text-[#000]"}`}
